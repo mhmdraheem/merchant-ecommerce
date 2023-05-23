@@ -5,6 +5,7 @@ services:
       context: ./account-management-service
     depends_on:
       - consul
+      - api-gateway
     restart: always
 
   inventory-service:
@@ -12,6 +13,7 @@ services:
       context: ./inventory-service
     depends_on:
       - consul
+      - api-gateway
     restart: always
 
   order-service:
@@ -19,6 +21,7 @@ services:
       context: ./order-service
     depends_on:
       - consul
+      - api-gateway
       - inventory-service
     restart: always
 
@@ -28,6 +31,15 @@ services:
     depends_on:
       - consul
     restart: always
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - consul
 
   consul:
     container_name: consul

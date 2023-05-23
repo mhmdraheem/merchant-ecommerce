@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    consul:
+      host: consul
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}-${random.int}
+    gateway:
+      routes:
+        - id: account-management-service
+          predicates:
+            - Path=/api/account
+          uri: lb://account-management-service
+        - id: order-service
+          predicates:
+            - Path=/api/order
+          uri: lb://order-service
+        - id: inventory-service
+          predicates:
+            - Path=/api/inventory
+          uri: lb://inventory-service

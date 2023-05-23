@@ -76,6 +76,7 @@
     </repositories>
 
     <modules>
+        <module>api-gateway</module>
         <module>account-management-service</module>
         <module>order-service</module>
         <module>inventory-service</module>
