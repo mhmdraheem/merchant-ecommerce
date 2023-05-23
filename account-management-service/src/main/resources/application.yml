@@ -1,12 +1,6 @@
 server:
-  port: 0
+  port: 8081
 
 spring:
   application:
     name: account-management-service
-  cloud:
-    consul:
-      host: consul
-      port: 8500
-      discovery:
-        instance-id: ${spring.application.name}-${random.int}

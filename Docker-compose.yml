@@ -7,6 +7,8 @@ services:
       - consul
       - api-gateway
     restart: always
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
 
   inventory-service:
     build:
@@ -15,6 +17,8 @@ services:
       - consul
       - api-gateway
     restart: always
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
 
   order-service:
     build:
@@ -24,6 +28,8 @@ services:
       - api-gateway
       - inventory-service
     restart: always
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
 
   notification-service:
     build:
@@ -31,6 +37,8 @@ services:
     depends_on:
       - consul
     restart: always
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
 
   api-gateway:
     build:
@@ -40,6 +48,8 @@ services:
     restart: always
     depends_on:
       - consul
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
 
   consul:
     container_name: consul
