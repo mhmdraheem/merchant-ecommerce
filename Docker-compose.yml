@@ -10,9 +10,9 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: docker
 
-  inventory-service:
+  product-service:
     build:
-      context: ./inventory-service
+      context: ./product-service
     depends_on:
       - consul
       - api-gateway
@@ -26,7 +26,7 @@ services:
     depends_on:
       - consul
       - api-gateway
-      - inventory-service
+      - product-service
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: docker

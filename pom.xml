@@ -87,7 +87,7 @@
         <module>api-gateway</module>
         <module>account-management-service</module>
         <module>order-service</module>
-        <module>inventory-service</module>
+        <module>product-service</module>
         <module>notification-service</module>
     </modules>
 

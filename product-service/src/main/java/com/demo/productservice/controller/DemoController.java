@@ -1,4 +1,4 @@
-package com.demo.inventoryservice.controller;
+package com.demo.productservice.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
