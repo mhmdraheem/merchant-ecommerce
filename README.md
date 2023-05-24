@@ -13,9 +13,9 @@ about products and orders.
 The account management service is used for merchant registration, account confirmation, and authentication. 
 
 ### APIs
-POST /api/account
-PUT  /api/account/confirm
-POST /api/account/authenticate
+* POST /api/account
+* PUT  /api/account/confirm
+* POST /api/account/authenticate
 
 ### User stories
 * As a merchant, I want to register using my email address, so that I can log in and use the system.
@@ -39,10 +39,10 @@ This service is for creating orders/returns of one or multiple products. An orde
 meaning that it's not confirmed yet. An endpoint exists for inquiring the final status (SUCCEEDED, or FAILED). 
 
 ### APIs
-POST /api/order
-GET  /api/order/{orderNumber}
-POST /api/order/{orderNumber}/return
-GET  /api/order?from={fromDate}&to={toDate}
+* POST /api/order
+* GET  /api/order/{orderNumber}
+* POST /api/order/{orderNumber}/return
+* GET  /api/order?from={fromDate}&to={toDate}
 
 ### User stories
 * As a merchant, I want to create orders of one or more products, so that I sell them to my customers.
